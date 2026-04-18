@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}About — Nishi Yadav{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="about-wrapper">
+
+  <!-- ── HERO BAND ── -->
+  <header class="about-header">
+    <p class="section-tag fade-in">✦ Her Story</p>
+    <h1 class="about-heading fade-in" data-delay="100">
+      Nishi <em>Yadav</em>
+    </h1>
+    <div class="gold-line fade-in" data-delay="200" style="margin: 24px 0;"></div>
+  </header>
+
+  <!-- ── TWO-COLUMN INTRO ── -->
+  <section class="about-intro">
+    <div class="about-photo-side fade-in">
+      <div class="about-photo-wrap">
+        <div class="about-photo" id="aboutPhoto1"></div>
+        <div class="about-photo-accent"></div>
+      </div>
+      <div class="about-photo-wrap about-photo-lower">
+        <div class="about-photo" id="aboutPhoto2"></div>
+      </div>
+    </div>
+
+    <div class="about-text-side">
+      <div class="fade-in" data-delay="100">
+        <span class="section-tag">Who She Is</span>
+        <h2 class="about-subheading">Intelligent. Pretty. Awesome.</h2>
+        <p class="about-body">
+          Born on <strong>September 15, 2010</strong>, Nishi Yadav arrived into this world like a quiet force — thoughtful, curious, and entirely herself. She's the kind of person who pays attention to things others miss, who shows up fully in whatever she does, and who makes the people around her feel seen.
+        </p>
+        <p class="about-body">
+          She carries a rare combination: the sharpness to understand the world around her, and the softness to feel it deeply. Intelligent beyond her years, pretty in ways that go far past appearance, and absolutely, undeniably awesome.
+        </p>
+      </div>
+
+      <div class="fade-in" data-delay="250">
+        <span class="section-tag" style="margin-top: 40px; display: block;">A Few Things About Her</span>
+        <ul class="trait-list">
+          <li><span class="trait-icon">🌙</span><div><strong>Thoughtful</strong><p>She remembers the little things — the things that matter.</p></div></li>
+          <li><span class="trait-icon">⚡</span><div><strong>Determined</strong><p>When she sets her mind to something, nothing stops her.</p></div></li>
+          <li><span class="trait-icon">🌸</span><div><strong>Warm</strong><p>Her presence makes spaces feel softer, safer, better.</p></div></li>
+          <li><span class="trait-icon">🎯</span><div><strong>Focused</strong><p>On the court, in the kitchen, in life — fully present.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIMELINE ── -->
+  <section class="timeline-section fade-in">
+    <span class="section-tag" style="display:block; text-align:center; margin-bottom:48px;">Her Journey So Far</span>
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="tl-year">2010</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">
+          <h4>The Beginning</h4>
+          <p>September 15 — a new star enters the world. Nishi Yadav is born.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in" data-delay="100">
+        <div class="tl-year">Early Years</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">
+          <h4>A Curious Mind</h4>
+          <p>Growing up with wide eyes and an open heart, discovering what she loves.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in" data-delay="200">
+        <div class="tl-year">The Court</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">
+          <h4>Picking Up the Racket</h4>
+          <p>Badminton becomes a language she speaks with her whole body.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in" data-delay="300">
+        <div class="tl-year">The Kitchen</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">
+          <h4>Learning to Cook</h4>
+          <p>Turning ingredients into something beautiful — a quiet superpower.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in" data-delay="400">
+        <div class="tl-year">Now</div>
+        <div class="tl-dot tl-dot--gold"></div>
+        <div class="tl-text">
+          <h4>Still Writing It</h4>
+          <p>Every day, becoming more and more herself. The best chapters are ahead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/photos.js') }}"></script>
+<script>
+  // Inject photos
+  if (typeof GALLERY_PHOTOS !== 'undefined' && GALLERY_PHOTOS.length > 2) {
+    document.getElementById('aboutPhoto1').style.backgroundImage = `url(${GALLERY_PHOTOS[2].src})`;
+    document.getElementById('aboutPhoto2').style.backgroundImage = `url(${GALLERY_PHOTOS[7].src})`;
+  }
+</script>
+{% endblock %}

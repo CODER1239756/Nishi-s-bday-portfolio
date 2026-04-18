@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Hobbies — Nishi Yadav{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hobbies.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="hobbies-wrapper">
+
+  <header class="hobbies-header">
+    <p class="section-tag fade-in">✦ What She Loves</p>
+    <h1 class="hobbies-heading fade-in" data-delay="100">
+      Her <em>World</em>
+    </h1>
+  </header>
+
+  <!-- ── BADMINTON ── -->
+  <section class="hobby-section hobby-badminton fade-in">
+    <div class="hobby-number">01</div>
+    <div class="hobby-content">
+      <span class="hobby-icon">🏸</span>
+      <h2 class="hobby-title">Badminton</h2>
+      <p class="hobby-desc">
+        On the court, she's a different person entirely — focused, fast, fearless. Badminton isn't just a sport for Nishi, it's a conversation between her body and the game. Every serve a sentence, every smash a punctuation mark. She plays with the kind of intensity that makes people stop and watch.
+      </p>
+      <div class="hobby-tags">
+        <span>Smash Queen</span>
+        <span>Court Vision</span>
+        <span>Swift Footwork</span>
+      </div>
+    </div>
+    <div class="hobby-visual hobby-visual--badminton"></div>
+  </section>
+
+  <!-- ── ANIME ── -->
+  <section class="hobby-section hobby-anime hobby-reverse fade-in">
+    <div class="hobby-number">02</div>
+    <div class="hobby-visual hobby-visual--anime"></div>
+    <div class="hobby-content">
+      <span class="hobby-icon">✨</span>
+      <h2 class="hobby-title">Anime</h2>
+      <p class="hobby-desc">
+        Anime gave Nishi entire worlds to live in — worlds with their own rules, their own beauty, their own heartbreak. She doesn't just watch anime; she <em>feels</em> it. The kind of fan who remembers soundtracks years later, who finds meaning in side characters, who cries at the good endings.
+      </p>
+      <div class="hobby-tags">
+        <span>Deep Lore</span>
+        <span>Character Art</span>
+        <span>Emotional Finales</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MOVIES ── -->
+  <section class="hobby-section hobby-movies fade-in">
+    <div class="hobby-number">03</div>
+    <div class="hobby-content">
+      <span class="hobby-icon">🎬</span>
+      <h2 class="hobby-title">Movies</h2>
+      <p class="hobby-desc">
+        From quiet dramas to big blockbusters, Nishi brings full emotion to every watch. She's the one who notices the background detail everyone else missed, who stays through the credits, who wants to talk about it afterward. Movies, for her, are a form of empathy — stepping into a hundred different lives.
+      </p>
+      <div class="hobby-tags">
+        <span>Story First</span>
+        <span>Background Details</span>
+        <span>Always Rewatching</span>
+      </div>
+    </div>
+    <div class="hobby-visual hobby-visual--movies"></div>
+  </section>
+
+  <!-- ── COOKING ── -->
+  <section class="hobby-section hobby-cooking hobby-reverse fade-in">
+    <div class="hobby-number">04</div>
+    <div class="hobby-visual hobby-visual--cooking"></div>
+    <div class="hobby-content">
+      <span class="hobby-icon">🍳</span>
+      <h2 class="hobby-title">Cooking</h2>
+      <p class="hobby-desc">
+        In the kitchen, Nishi is in her element. There's something meditative about it — the chopping, the stirring, the waiting. She cooks the way she does most things: with care, attention, and a desire to make something that matters. Food made by her tastes different. Better. Because it's made with love.
+      </p>
+      <div class="hobby-tags">
+        <span>Home Recipes</span>
+        <span>Made with Love</span>
+        <span>Kitchen Experiments</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Gallery — Nishi Yadav{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="gallery-wrapper">
+
+  <header class="gallery-header">
+    <p class="section-tag fade-in">✦ Memory Lane</p>
+    <h1 class="gallery-heading fade-in" data-delay="100">
+      Her <em>Gallery</em>
+    </h1>
+    <p class="gallery-sub fade-in" data-delay="200">A collection of moments — candid, captured, cherished.</p>
+  </header>
+
+  <!-- Masonry grid — populated by JS -->
+  <div class="masonry-grid" id="masonryGrid"></div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose">✕</button>
+    <button class="lb-prev" id="lbPrev">‹</button>
+    <div class="lb-img-wrap">
+      <img id="lbImg" src="" alt="Gallery photo" />
+    </div>
+    <button class="lb-next" id="lbNext">›</button>
+    <div class="lb-counter" id="lbCounter">1 / 12</div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/photos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+{% endblock %}

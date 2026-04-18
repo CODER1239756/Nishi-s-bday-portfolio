@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Nishi Yadav — Home{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <!-- Particle canvas -->
+  <canvas id="particles" class="particles-canvas"></canvas>
+
+  <div class="hero-content">
+    <p class="hero-tag fade-in" data-delay="100">✦ A star since September 15, 2010 ✦</p>
+
+    <h1 class="hero-name fade-in" data-delay="200">
+      <span class="name-first">Nishi</span>
+      <span class="name-last">Yadav</span>
+    </h1>
+
+    <p class="hero-tagline fade-in" data-delay="350">
+      Intelligent &nbsp;·&nbsp; Pretty &nbsp;·&nbsp; Awesome
+    </p>
+
+    <div class="gold-line fade-in" data-delay="450" style="margin: 28px auto;"></div>
+
+    <!-- Birthday countdown -->
+    <div class="countdown-wrap fade-in" data-delay="550">
+      <p class="countdown-label">Next Birthday In</p>
+      <div class="countdown-grid" id="countdown">
+        <div class="countdown-unit"><span id="cd-days">--</span><small>Days</small></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span id="cd-hours">--</span><small>Hours</small></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span id="cd-mins">--</span><small>Mins</small></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span id="cd-secs">--</span><small>Secs</small></div>
+      </div>
+
+      <!-- Unlock button — hidden until midnight Sept 15 -->
+      <div id="unlockWrap" style="display:none; margin-top: 32px;">
+        <p class="unlock-msg">🎉 The day has arrived — it's her birthday!</p>
+        <a href="/secret" class="btn-unlock" id="unlockBtn">
+          <span class="btn-unlock-inner">Open Birthday Experience ✦</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero photo -->
+  <div class="hero-photo-frame fade-in" data-delay="300">
+    <div class="hero-photo-border"></div>
+    <div class="hero-photo" id="heroPhoto"></div>
+    <div class="hero-photo-label">Nishi Yadav</div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-hint fade-in" data-delay="800">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── INTRO QUOTE ── -->
+<section class="quote-section">
+  <div class="quote-inner fade-in">
+    <span class="section-tag">About Her</span>
+    <blockquote class="quote-text">
+      "Some people come into your life and make it <em>brighter</em> just by being in it."
+    </blockquote>
+    <p class="quote-body">
+      Born on the 15th of September, Nishi Yadav is one of those rare souls who carries warmth everywhere she goes. Whether it's the badminton court, the kitchen, or a cozy anime marathon — she brings her whole self to everything she does.
+    </p>
+    <a href="/about" class="link-arrow">Read her story &rarr;</a>
+  </div>
+</section>
+
+<!-- ── HIGHLIGHTS ── -->
+<section class="highlights-section">
+  <div class="hl-grid">
+    <div class="hl-card fade-in" data-delay="0">
+      <div class="hl-icon">🏸</div>
+      <h3>Badminton</h3>
+      <p>Swift on the court, fierce in spirit.</p>
+    </div>
+    <div class="hl-card fade-in" data-delay="100">
+      <div class="hl-icon">✨</div>
+      <h3>Anime</h3>
+      <p>Worlds beyond worlds, story after story.</p>
+    </div>
+    <div class="hl-card fade-in" data-delay="200">
+      <div class="hl-icon">🎬</div>
+      <h3>Movies</h3>
+      <p>From drama to comedy — she feels it all.</p>
+    </div>
+    <div class="hl-card fade-in" data-delay="300">
+      <div class="hl-icon">🍳</div>
+      <h3>Cooking</h3>
+      <p>Turning ingredients into little acts of love.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/photos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

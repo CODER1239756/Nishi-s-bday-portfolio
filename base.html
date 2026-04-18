@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Nishi Yadav{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <a href="/" class="nav-logo">Ny</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
+      <li><a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a></li>
+      <li><a href="/hobbies" class="nav-link {% if request.path == '/hobbies' %}active{% endif %}">Hobbies</a></li>
+      <li><a href="/gallery" class="nav-link {% if request.path == '/gallery' %}active{% endif %}">Gallery</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/" class="mobile-link">Home</a>
+    <a href="/about" class="mobile-link">About</a>
+    <a href="/hobbies" class="mobile-link">Hobbies</a>
+    <a href="/gallery" class="mobile-link">Gallery</a>
+  </div>
+
+  <!-- ── PAGE CONTENT ── -->
+  {% block content %}{% endblock %}
+
+  <!-- ── CUSTOM CURSOR ── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

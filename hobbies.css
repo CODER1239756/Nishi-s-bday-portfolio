@@ -1,0 +1,150 @@
+/* hobbies.css */
+
+.hobbies-wrapper { padding-top: var(--nav-h); }
+
+.hobbies-header {
+  padding: 80px 80px 40px;
+}
+.hobbies-heading {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  margin-top: 16px;
+}
+.hobbies-heading em { font-style: italic; color: var(--gold); }
+
+/* ── HOBBY SECTION ── */
+.hobby-section {
+  display: grid;
+  grid-template-columns: 60px 1fr 400px;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 80px 80px 80px;
+  border-top: 1px solid rgba(201,168,76,0.08);
+  position: relative;
+}
+.hobby-section.hobby-reverse {
+  grid-template-columns: 60px 400px 1fr;
+}
+.hobby-section.hobby-reverse .hobby-content { grid-column: 3; }
+.hobby-section.hobby-reverse .hobby-visual  { grid-column: 2; }
+
+.hobby-number {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 300;
+  color: rgba(201,168,76,0.12);
+  line-height: 1;
+  align-self: start;
+}
+
+.hobby-content { position: relative; }
+
+.hobby-icon { font-size: 2.5rem; display: block; margin-bottom: 16px; }
+
+.hobby-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.hobby-desc {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  line-height: 1.9;
+  max-width: 520px;
+  margin-bottom: 24px;
+}
+.hobby-desc em { font-style: italic; color: var(--white); }
+
+.hobby-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.hobby-tags span {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-dim);
+  border-radius: 2px;
+}
+
+/* ── VISUALS (decorative SVG illustrations) ── */
+.hobby-visual {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.1);
+}
+
+/* Badminton — shuttlecock SVG motif */
+.hobby-visual--badminton::before {
+  content: '🏸';
+  font-size: 8rem;
+  opacity: 0.15;
+  animation: float 4s ease-in-out infinite;
+}
+/* Anime — star burst */
+.hobby-visual--anime::before {
+  content: '⭐';
+  font-size: 8rem;
+  opacity: 0.15;
+  animation: float 5s ease-in-out infinite reverse;
+}
+/* Movies — film reel */
+.hobby-visual--movies::before {
+  content: '🎬';
+  font-size: 8rem;
+  opacity: 0.15;
+  animation: float 4.5s ease-in-out infinite;
+}
+/* Cooking — pot */
+.hobby-visual--cooking::before {
+  content: '🍳';
+  font-size: 8rem;
+  opacity: 0.15;
+  animation: float 3.5s ease-in-out infinite reverse;
+}
+
+/* Gold corner accent */
+.hobby-visual::after {
+  content: '';
+  position: absolute;
+  bottom: 12px; right: 12px;
+  width: 40px; height: 40px;
+  border-right: 1px solid rgba(201,168,76,0.4);
+  border-bottom: 1px solid rgba(201,168,76,0.4);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-16px) rotate(6deg); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hobbies-header { padding: 60px 24px 24px; }
+  .hobby-section,
+  .hobby-section.hobby-reverse {
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+    gap: 24px;
+  }
+  .hobby-section.hobby-reverse .hobby-content,
+  .hobby-section.hobby-reverse .hobby-visual { grid-column: 1; }
+  .hobby-visual { max-width: 280px; }
+  .hobby-number { font-size: 3rem; }
+}
